@@ -1,51 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Multiverse Madness — VR Free Roam Arena</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-<body>
-  <!-- Header / Kabana (right-aligned) -->
+<body class="theme-dark">
+  <!-- Fullscreen background video -->
+  <video class="bg-video" src="assets/videos/web%20video1.mp4"
+         autoplay muted loop playsinline></video>
+  <div class="bg-scrim"></div>
+
+  <!-- Header / Kabana -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home">
-        <img src="assets/images/MM%20logo.jpeg" alt="Multiverse Madness logo" />
+      <a class="brand" href="index.html#home">
+        <img src="assets/images/MM%20logo.jpeg" alt="Multiverse Madness logo"/>
         <span>Multiverse Madness</span>
       </a>
       <nav class="kabana">
-        <a href="#home">Home</a>
-        <a href="#games">Our Games</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contract Us</a>
+        <a href="index.html#home">Home</a>
+        <a href="games.html">Our Games</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contract Us</a>
       </nav>
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     </div>
   </header>
 
-  <!-- Hero with two videos -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <h1>Step Into Another Universe</h1>
-        <p>Free-roam VR for friends, families, parties & team-building. Walk, dodge, and battle together in arena-scale adventures.</p>
-        <a class="cta" href="#games">Explore Our Games</a>
-      </div>
-      <div class="video-stack">
-        <video class="vid primary" src="assets/videos/web%20video1.mp4" autoplay muted loop playsinline></video>
-        <video class="vid secondary" src="assets/videos/GameVideos.mp4" autoplay muted loop playsinline></video>
-      </div>
-    </div>
-  </section>
+  <!-- Hero (foreground content) -->
+  <section id="home" class="hero hero--fullscreen">
+    <div class="container hero-inner">
+      <h1>Step Into Another Universe</h1>
+      <p>Free-roam VR for friends, families, parties & team-building. Walk, dodge, and battle together in arena-scale adventures.</p>
+      <a class="cta" href="games.html">Explore Our Games</a>
 
-  <!-- Our Games -->
-  <section id="games" class="section">
-    <div class="container">
-      <h2>Our Games</h2>
-      <p class="sub">Highlights from our VR Arena lineup.</p>
-      <div id="gamesGrid" class="cards"></div>
-      <p class="pdf-note">Full details available in our brochure.</p>
+      <!-- Second video (small overlay) -->
+      <div class="pip-video">
+        <video src="assets/videos/GameVideos.mp4" autoplay muted loop playsinline></video>
+      </div>
     </div>
   </section>
 

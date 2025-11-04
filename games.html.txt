@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Our Games — Multiverse Madness</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="theme-dark">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html#home">
+        <img src="assets/images/MM%20logo.jpeg" alt="Multiverse Madness logo"/>
+        <span>Multiverse Madness</span>
+      </a>
+      <nav class="kabana">
+        <a href="index.html#home">Home</a>
+        <a class="active" href="games.html">Our Games</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contract Us</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>Our Games</h2>
+      <p class="sub">Highlights from our VR Arena lineup.</p>
+      <div id="gamesGrid" class="cards"></div>
+
+      <p class="pdf-note">
+        Full list & details in our brochure.
+        <a href="docs/VR%20Arena%20game%20introduction.pdf" target="_blank" rel="noopener">Open PDF</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="yr"></span> Multiverse Madness</span>
+      <a href="#">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal list (you can expand this from your PDF)
+    const games = [
+      { name: "Renovation", blurb: "Team-based VR shooter across multiple maps." },
+      { name: "Bomberman", blurb: "Throw, dodge, outlast in chaotic PVP." },
+      { name: "Puyo Shooter", blurb: "Bow-and-arrow PVP with wild arrow types." },
+      { name: "Puyo Shooter Adventure", blurb: "Co-op PVE with monsters & boss." },
+      { name: "Cyber Dash", blurb: "Team arena with energy skills & shields." },
+      { name: "Zombies", blurb: "Free-roam survival against waves of undead." },
+      { name: "Future War", blurb: "Capture resource points while battling enemies." },
+      { name: "Field Knights", blurb: "Light up cubes, control the grid, score big." },
+      { name: "Table Boomerang", blurb: "Party brawler—throw, dash, outplay." },
+      { name: "Island Defense", blurb: "Defend the island with crossbows & turrets." },
+      { name: "Leader of Darkness", blurb: "Biochemical shooter with powerful weapons." },
+      { name: "Nimble Magic Cube", blurb: "Co-op cube elimination—think fast!" }
+    ];
+    const grid = document.getElementById('gamesGrid');
+    grid.innerHTML = games.map(g => `
+      <article class="card">
+        <h3>${g.name}</h3>
+        <p>${g.blurb}</p>
+      </article>
+    `).join('');
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
