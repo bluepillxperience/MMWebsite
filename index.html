@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multiverse Madness — VR Free Roam Arena</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Kabana (right-aligned) -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img src="assets/images/MM%20logo.jpeg" alt="Multiverse Madness logo" />
+        <span>Multiverse Madness</span>
+      </a>
+      <nav class="kabana">
+        <a href="#home">Home</a>
+        <a href="#games">Our Games</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contract Us</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero with two videos -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Step Into Another Universe</h1>
+        <p>Free-roam VR for friends, families, parties & team-building. Walk, dodge, and battle together in arena-scale adventures.</p>
+        <a class="cta" href="#games">Explore Our Games</a>
+      </div>
+      <div class="video-stack">
+        <video class="vid primary" src="assets/videos/web%20video1.mp4" autoplay muted loop playsinline></video>
+        <video class="vid secondary" src="assets/videos/GameVideos.mp4" autoplay muted loop playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Games -->
+  <section id="games" class="section">
+    <div class="container">
+      <h2>Our Games</h2>
+      <p class="sub">Highlights from our VR Arena lineup.</p>
+      <div id="gamesGrid" class="cards"></div>
+      <p class="pdf-note">Full details available in our brochure.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container about">
+      <h2>About Us</h2>
+      <p>Multiverse Madness brings premium free-roam VR experiences to Chennai. We focus on fun, safety, and unforgettable group play.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container contact">
+      <h2>Contract Us</h2>
+      <form class="contact-form" name="contact" netlify>
+        <div class="row">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <textarea name="message" rows="5" placeholder="Tell us about your event or inquiry…" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p class="tiny">Prefer email? Write to <a href="mailto:bookings@multiversemadness.in">bookings@multiversemadness.in</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="yr"></span> Multiverse Madness</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
