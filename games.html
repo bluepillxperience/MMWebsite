@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Our Games — Multiverse Madness</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <meta name="color-scheme" content="dark">
+</head>
+<body class="theme-dark">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html#home">
+        <img src="assets/images/MM%20logo.jpeg" alt="Multiverse Madness logo"/>
+        <span>Multiverse Madness</span>
+      </a>
+      <nav class="kabana">
+        <a href="index.html#home">Home</a>
+        <a class="active" href="games.html">Our Games</a>
+        <a href="index.html#events">Parties & Events</a>
+        <a href="index.html#videos">Videos</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contract Us</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>Our Games</h2>
+      <p class="sub">Auto-extracted from our VR Arena brochure.</p>
+
+      <div id="gamesGrid" class="cards"></div>
+
+      <p class="pdf-note">
+        Full brochure:
+        <a href="docs/VR%20Arena%20game%20introduction.pdf" target="_blank" rel="noopener">Open PDF</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="yr"></span> Multiverse Madness</span>
+      <a href="#">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Parsed from /docs/VR Arena game introduction.pdf
+    const games = [
+      {"name":"Renovation","blurb":"Renovation is an exciting VR shooting game that supports multiplayer competition. It includes multiple maps, such as broken bridge, warehouse, ruin, etc."},
+      {"name":"Bomberman","blurb":"Bomberman is a fun-filled multiplayer PVP VR game. Players will become cute little cookiemen who throw bombs to each other."},
+      {"name":"Puyo Shooter","blurb":"Puyo Shooter is a creative multiplayer PVP VR game. Players will become a hippo whose left hands hold a bow and shoot the opponent."},
+      {"name":"Puyo Shooter Adventure","blurb":"Puyo Shooter Adventure is a PVE VR shooting game. Players become hippo warriors who use bows and props to battle creatures in a magical world."},
+      {"name":"Cyber Dash","blurb":"Cyber Dash is a PVP VR shooting game that supports multiplayer competition. Players join red or blue teams and the team with the most eliminations wins."},
+      {"name":"Zombies","blurb":"Sneak into a secret base and battle waves of zombies! A zombie-themed multiplayer VR shooter with characters, weapons and props."},
+      {"name":"Future War","blurb":"A military game set in a future world. Move freely in the war zone, cooperate with teammates, capture resource locations and rack up points."},
+      {"name":"Field Knights","blurb":"Light up the cubes to gain points. If a line is lit, points are added permanently; the map changes over time and the score continues."},
+      {"name":"Table Boomerang","blurb":"A party brawler for all ages: become different foods, throw, dash and outplay with wacky scene tricks and prop combinations."},
+      {"name":"Island Defense","blurb":"A PVE arrow-defense game. Build turret lines, fight back monsters and protect the island’s crystals."},
+      {"name":"Leader of Darkness","blurb":"A biochemistry-themed multiplayer shooter with many weapons, tricks, terrains and intelligent monsters—including giant creatures."},
+      {"name":"Nimble Magic Cube","blurb":"A level-up VR/MR cube-elimination game where intelligence meets speed—cooperate, use tactics and advance through challenges."}
+    ];
+
+    // Render
+    const grid = document.getElementById('gamesGrid');
+    grid.innerHTML = games.map(g => `
+      <article class="card">
+        <h3>${g.name}</h3>
+        <p>${g.blurb}</p>
+      </article>
+    `).join('');
+
+    // Footer year + mobile menu
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const kabana = document.querySelector('.kabana');
+    let mobileNav;
+    toggle?.addEventListener('click', () => {
+      if (!mobileNav) {
+        mobileNav = kabana.cloneNode(true);
+        mobileNav.classList.add('kabana-mobile');
+        Object.assign(mobileNav.style, {
+          display: 'flex', flexDirection: 'column', gap: '10px', padding: '10px',
+          background: '#0b0f1a', borderTop: '1px solid #1d2741'
+        });
+        document.querySelector('.site-header .container').appendChild(mobileNav);
+      } else {
+        mobileNav.style.display = mobileNav.style.display === 'none' ? 'flex' : 'none';
+      }
+    });
+  </script>
+</body>
+</html>
